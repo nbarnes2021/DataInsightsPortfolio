@@ -15,20 +15,29 @@ This report outlines the process for conducting a market basket analysis, aiming
 
 ## Step 2: Data Collection and Measurement Strategy
 **Data Requirements:**
-- Type of data required: [Type of data]
-- Data sources: [Data sources]
-- Data structure: [Data structure]
-- Data issues: [Data issues]
+- Type of data required: Tabular sales and transaction data
+- Data sources: Raw Excel spreadsheet
+- Data structure: Tabular format with columns (InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country)
+
+- Data issues: Original data may include non-UTF-8 characters
 
 **Collection/Measurement:**
-- Measurement procedures: [Measurement procedures]
-- Validity and reliability: [Validity and reliability assessment]
+- Measurement procedures: Converted raw Excel data to UTF-8 encoded CSV for compatibility
+- Validity and reliability: Ensured data integrity by maintaining original structure and addressing encoding issues
 
 **Data Cleaning:**
-- Pre-processing steps: [Pre-processing steps]
-- Data cleaning process: [Data cleaning process]
+- Pre-processing steps: Converted Excel to UTF-8 CSV using PowerShell script
+- Data cleaning process: Addressed potential encoding issues during conversion
 - Missing data: [Missing data handling]
 - Data removal: [Data removal explanation]
+
+**Conversion of Raw Excel to UTF-8 CSV:**
+
+1. Created a PowerShell script to convert the original Excel spreadsheet to UTF-8 encoded CSV.
+
+**Importing UTF-8 CSV into PostgreSQL:**
+
+1. Used the PostgreSQL terminal to import the UTF-8 CSV data into the 'market_basket_data' table.
 
 ## Step 3: Visualize and Summarize Data
 **Data Overview:**
