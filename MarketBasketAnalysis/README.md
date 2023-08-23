@@ -43,6 +43,20 @@ This report outlines the process for conducting a market basket analysis, aiming
 
 ## Step 3: Visualize and Summarize Data
 **Data Overview:**
+
+****Summary Statistics (Uncleaned Data):****
+  - Total Rows: 541,909
+  - Count of "Quantity" Column: 541,909
+  - Average Quantity: 9.55
+  - Minimum Quantity: -80,995 (Note: This value is incorrect and likely due to data anomalies.)
+  - Maximum Quantity: 80,995
+
+**Notes:**
+
+- The summary statistics above are based on the raw, uncleaned data and include null values.
+- The minimum quantity value appears to be incorrect, indicating potential data anomalies that require investigation.
+
+
 - Summary statistics: [Summary statistics]
 - Visualizations: [Visualizations]
 
