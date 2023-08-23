@@ -19,7 +19,9 @@ This report outlines the process for conducting a market basket analysis, aiming
 - Data sources: Raw Excel spreadsheet
 - Data structure: Tabular format with columns (InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country)
 
-- Data issues: Original data may include non-UTF-8 characters
+**Data Issues:**
+- Original data may include non-UTF-8 characters
+- CustomerID field contains values in a non-standard text format (e.g., "99.96," "988," "987.14") but is not extensively modified for the current scope of the research.
 
 **Collection/Measurement:**
 - Measurement procedures: Converted raw Excel data to UTF-8 encoded CSV for compatibility
