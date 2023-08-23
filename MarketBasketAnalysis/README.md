@@ -46,16 +46,28 @@ This report outlines the process for conducting a market basket analysis, aiming
 
 ****Summary Statistics (Uncleaned Data):****
   - Total Rows: 541,909
-  - Count of "Quantity" Column: 541,909
+  - Count of Quantity Column: 541,909
   - Average Quantity: 9.55
   - Minimum Quantity: -80,995 (Note: This value is incorrect and likely due to data anomalies.)
   - Maximum Quantity: 80,995
 
+  - Count of UnitPrice Column: 406,829 (Note: Indicates missing values)
+  - Average Unit Price: 15,287.69
+  - Minimum Unit Price: 1,234.00
+  - Maximum Unit Price: 18,287.00
+
 **Notes:**
 
-- The summary statistics above are based on the raw, uncleaned data and include null values.
+- The summary statistics above are based on the raw, uncleaned data which includes null and missing values.
 - The minimum quantity value appears to be incorrect, indicating potential data anomalies that require investigation.
+- The total unit price value is less than than the total rows, missing or null values.
+- The total unit price entries are less than the total number of rows, indicating missing or null values in the "UnitPrice" column.
 
+
+**Handling Missing Data:**
+
+- After exploring the data in the "Description" column, it was observed that certain rows contained descriptions like "?", "amazon", "check", "damaged," etc., which were deemed irrelevant to the analysis. These rows were removed.
+- Rows with negative quantities and customerIDs of 0 were also removed from the dataset, as they did not align with the scope of the research, which focuses on co-purchase patterns and does not include post-purchase events like returns or exchanges.
 
 - Summary statistics: [Summary statistics]
 - Visualizations: [Visualizations]
