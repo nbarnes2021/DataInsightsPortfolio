@@ -6,12 +6,12 @@ This report outlines the process for conducting a market basket analysis, aiming
 
 ## Step 1: Research Question and Problem Statement
 **Research Question/Problem Statement:**
-- [Research question or problem statement #1]
-- [Research question or problem statement #2]
-
+- What are the most commonly co-purchased items in the dataset, and how do these co-purchasing patterns vary between top-selling countries?
+  
 **Notes:**
-- [Additional thoughts around the research question]
-- [Hypothesis, potential issues, challenges, limitations, etc.]
+- This analysis aims to explore patterns of co-purchase behavior in the dataset to understand customer preferences and potential cross-selling opportunities.
+- We hypothesize that certain items, such as tea sets and jam in the United Kingdom, may be frequently co-purchased due to cultural factors.
+- The scope of the analysis will be focused on the top-performing countries by sales volume.
 
 ## Step 2: Data Collection and Measurement Strategy
 **Data Requirements:**
