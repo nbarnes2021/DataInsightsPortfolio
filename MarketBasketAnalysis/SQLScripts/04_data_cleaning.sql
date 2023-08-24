@@ -154,7 +154,7 @@ WHERE "Description" LIKE '%wrongly%'
    OR "Description" LIKE '%missing%'
    OR "Description" LIKE '%mouldy%';
    
-Delete FROM market_basket_data
+DELETE FROM market_basket_data
 WHERE "Description" LIKE '%wrongly%'
    OR "Description" LIKE '%marked%'
    OR "Description" LIKE '%allocate%'
@@ -180,4 +180,93 @@ WHERE "Description" LIKE '%wrongly%'
    OR "Description" LIKE '%incorrect%'
    OR "Description" LIKE '%manual%'
    OR "Description" LIKE '%missing%'
-   OR "Description" LIKE '%mouldy%';
+   OR "Description" LIKE '%mouldy%'
+   OR "Description" LIKE '%20713%'
+   OR "Description" LIKE '%Adjustment%'
+   OR "Description" LIKE '%alan hodge cant mamage this section%'
+   OR "Description" LIKE '%Amazon%'
+   OR "Description" LIKE '%AMAZON%'
+   OR "Description" LIKE '%Amazon Adjustment%'
+   OR "Description" LIKE '%AMAZON FEE%'
+   OR "Description" LIKE '%Bank Charges%'
+   OR "Description" LIKE '%Breakages%'
+   OR "Description" LIKE '%came coded as 20713%'
+   OR "Description" LIKE '%CHECK%'
+   OR "Description" LIKE '%CRUK Commission%' 
+   OR "Description" LIKE '%Crushed%'
+   OR "Description" LIKE '%Dagamed%'
+   OR "Description" LIKE '%Damaged%'
+   OR "Description" LIKE '%DAMAGED%'
+   OR "Description" LIKE '%Damages%'
+   OR "Description" LIKE '%Discount%'
+   OR "Description" LIKE '%Display%'
+   OR "Description" LIKE '%Dotcom%'
+   OR "Description" LIKE '%DOTCOM POSTAGE%'
+   OR "Description" LIKE '%Dotcom sales%'
+   OR "Description" LIKE '%Dotcom set%'
+   OR "Description" LIKE '%Dotcomgiftshop%'
+   OR "Description" LIKE '%FBA%'
+   OR "Description" LIKE '%Found%'
+   OR "Description" LIKE '%FOUND%'
+   OR "Description" LIKE '%Given away%'
+   OR "Description" LIKE '%High Resolution Image%'
+   OR "Description" LIKE '%Incorrect stock entry.%'
+   OR "Description" LIKE '%John Lewis%'
+   OR "Description" LIKE '%label mix up%'
+   OR "Description" LIKE '%Lighthouse Trading zero invc incorr%'
+   OR "Description" LIKE '%Manual%'
+   OR "Description" LIKE '%Marked as 23343%'
+   OR "Description" LIKE '%MIA%'
+   OR "Description" LIKE '%Missing%'
+   OR "Description" LIKE '%mix up with c%'
+   OR "Description" LIKE '%for online retail orders%'
+   OR "Description" LIKE '%on cargo order%'
+   OR "Description" LIKE '%printing smudges/thrown away%'
+   OR "Description" LIKE '%rusty thrown away%'
+   OR "Description" LIKE '%Sale error%'
+   OR "Description" LIKE '%SALLE DE BAIN HOOK%'
+   OR "Description" LIKE '%SAMPLES%'
+   OR "Description" LIKE '%Show Samples%'
+   OR "Description" LIKE '%showroom%'
+   OR "Description" LIKE '%thrown away%'
+   OR "Description" LIKE '%thrown%'
+   OR "Description" LIKE '%website fixed%'
+   OR "Description" LIKE '%Wet pallet-thrown away%'
+   OR "Description" LIKE '%WET/MOULDY%'
+   OR "Description" LIKE '%wrong code%';
+   
+-- Detect duplicate stock codes
+Select count("StockCode") as stock_counts,"StockCode"
+from market_basket_data
+group by "StockCode"
+having count(*) > 1
+order by stock_counts desc;
+
+-- Exploring Stock Code
+select *
+from market_basket_data
+where "StockCode" = '85123A';
+
+select distinct "Description"
+from market_basket_data
+where "StockCode" = '85123A';
+
+Select count("StockCode") as stock_counts,"StockCode", "Description"
+from market_basket_data
+group by "StockCode", "Description"
+order by stock_counts desc;
+
+--Looking into data anomalies
+SELECT DISTINCT "StockCode"
+FROM market_basket_data
+WHERE "StockCode" NOT LIKE '%[0-9]%';
+
+--Imputing null values
+UPDATE market_basket_data
+SET "Description" = 'UNKNOWN'
+WHERE "Description" IS NULL;
+
+--Validating data imputation
+select * from
+market_basket_data
+where "Description" is null;
