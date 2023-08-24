@@ -68,6 +68,7 @@ This report outlines the process for conducting a market basket analysis, aiming
 
 - After exploring the data in the "Description" column, it was observed that certain rows contained descriptions like "?", "amazon", "check", "damaged," etc., which were deemed irrelevant to the analysis. These rows were removed.
 - Rows with negative quantities and customerIDs of 0 were also removed from the dataset, as they did not align with the scope of the research, which focuses on co-purchase patterns and does not include post-purchase events like returns or exchanges.
+- Null values in the "Description" column were imputed with "Unknown" to maintain data integrity for the analysis.
 
 - Summary statistics: [Summary statistics]
 - Visualizations: [Visualizations]
