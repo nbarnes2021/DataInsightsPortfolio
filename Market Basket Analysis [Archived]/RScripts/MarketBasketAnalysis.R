@@ -1,5 +1,0 @@
-library(arules)
-library(arulesViz)
-library(datasets)
-data <- read.transactions("C:\Users\14043\Documents\DataAnalysisProjects\DataInsightsPortfolio\MarketBasketAnalysis\Data\OnlineRetailCleansed.csv",format = "single", sep = ",", cols = NULL)
-inspect(head(data,4))
