@@ -38,13 +38,10 @@ This archived report outlines the process and challenges encountered during a ma
 **Analysis Process:**
 - Summary statistics were generated inside of Excel and examined
 
-
-
-
-
-
-
-
+![image](https://github.com/nbarnes2021/DataInsightsPortfolio/blob/main/MarketBasketAnalysis/Data/Summary%20Statistics/Holiday%20Items%20Sold%20by%20Month.png)
+![image](https://github.com/nbarnes2021/DataInsightsPortfolio/blob/main/MarketBasketAnalysis/Data/Summary%20Statistics/Holiday%20Sales%20by%20Month.png)
+![image](https://github.com/nbarnes2021/DataInsightsPortfolio/blob/main/MarketBasketAnalysis/Data/Summary%20Statistics/Holiday%20Transactions%20by%20Month.png)
+![image](https://github.com/nbarnes2021/DataInsightsPortfolio/blob/main/MarketBasketAnalysis/Data/Summary%20Statistics/Summary%20Statistics%20Table.png)
 
 **Challenges Encountered:**
 - The apriori algorithm failed to find meaningful associations in the limited dataset.
